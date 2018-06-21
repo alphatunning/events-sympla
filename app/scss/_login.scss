@@ -1,0 +1,45 @@
+.login__background--image {
+	position: fixed; 
+	right: 0; 
+	bottom: 0;
+	min-width: 100%; 
+	min-height: 100%;
+	width: auto; 
+	height: auto; 
+	background: url(/img/smoke.png) no-repeat;
+	background-size: cover; 
+}
+
+.login__background--video {
+	display: none;
+	@include media-breakpoint-up(md) { 
+		display: flex;
+	}
+	position: fixed; 
+	right: 0; 
+	bottom: 0;
+	min-width: 100%; 
+	min-height: 100%;
+	width: auto; 
+	height: auto; 
+}
+
+.login__container {
+	background: rgba(255, 255, 255, 0.6);
+	box-shadow: 3px 9px 15px rgba(152, 152, 152, 0.6);
+    padding: 10px;
+    border-radius: 7px;
+    margin: 0;
+
+	&__image {
+		width: 200px;
+	}
+
+	.btn-login {
+		margin-bottom: 0;
+		color: $white;
+		background-color: $gray-200;
+		border-color: $gray-200;
+	}
+}
+

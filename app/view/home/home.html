@@ -1,0 +1,59 @@
+<div ng-include="'view/shared/header.html'"></div>
+<div ng-include="'view/shared/subheader.html'"></div>
+<div ng-include="'view/shared/modals.html'"></div>
+
+<main class="main">
+	<div class="container">
+		<div class="row">
+			<div class="col-12 text-center">
+				<div class="events__empty" ng-show="events.length == 0">
+					<img src="img/icon-calendario.svg" alt="">
+					<p class="events__empty__title">Você não possui eventos criados</p>
+					<a class="btn btn--orange" href="?#!/register">Criar novo evento</a>
+				</div>
+
+				<div class="events__list" ng-show="!(events.length == 0)">
+					<div class="card__events">
+						<div class="row">
+							<div class="col-12">
+								<h2 class="card__events__title">Minha lista de eventos</h2>
+							</div>
+							<div class="col-12">
+								<div class="table-responsive">
+									<table class="table card__events__table">
+										<thead>
+											<tr>
+												<th>Evento</th>
+												<th>Data</th>
+												<th>Cidade</th>
+												<th colspan="2">Ingressos</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr ng-repeat="event in events">
+												<td>{{event.nameEvent}}</td>
+												<td>{{event.startDate  | date:'dd/MM/yyyy'}}</td>
+												<td>{{event.nameCity}}</td>
+												<td>
+													<div class="progress__customized">
+														<span class="progress__customized__init">{{event.amountTicket}}</span>
+														<progress value="{{event.amountTicket}}" max="{{event.totalAmount}}"></progress>
+														<span class="progress__customized__end">{{event.totalAmount}}</span>
+													</div>
+												</td>
+												<td ng-click="eventSelectedSave(event.id)">
+													<i class="far fa-trash-alt fa-lg color--blue" data-toggle="modal" data-target="#modalConfirmDelete"></i>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+</main>

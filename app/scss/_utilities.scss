@@ -1,0 +1,28 @@
+.background--gray-100 {
+	background: gray;
+}
+
+.btn--orange {
+	color: $white;
+	background: $orange;
+	&:hover {
+		color: $white;
+	}
+}
+
+.btn--blue__outline {
+	color: $blue;
+	background: $white;
+	border: 1px solid $blue;
+	&:hover {
+		color: $blue;
+	}
+}
+
+.btn--blue {
+	color: $white;
+	background: $blue;
+	&:hover {
+		color: $white;
+	}
+}

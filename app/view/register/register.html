@@ -1,0 +1,190 @@
+<div ng-include="'view/shared/header.html'"></div>
+<div ng-include="'view/shared/subheader.html'"></div>
+
+<main class="main">
+	<div class="container">
+		<div class="row">
+			<div class="col-12 text-center">	
+				<div class="register__events">
+					<form class="register__events__form" angular-validator-submit="createEvent(event)" name="myForm" class="form-horizontal" novalidate angular-validator>
+						<div class="form-group">
+							<h2 class="register__events__form__title">1. Nome do evento</h2>
+						</div>
+						<div class="form-row">
+							<div class="col-12 col-xl-10 pb-2">
+								<div class="form-group">
+									<label for="nameEvent">Nome do evento <span class="color--red">*</span></label>
+									<input type = "text"
+										id="nameEvent"
+										name = "nameEvent"
+										class = "form-control"
+										ng-model = "event.nameEvent"
+										required-message="'Campo obrigatório'"
+										validate-on="dirty"
+										required>
+								</div>
+							</div>
+							<div class="col-12 col-xl-10 pb-2">
+								<div class="form-group">
+									<label for="nameCity">Nome da cidade <span class="color--red">*</span></label>
+									<input type = "text"
+										id="nameCity"
+										name = "nameCity"
+										class = "form-control"
+										ng-model = "event.nameCity"
+										required-message="'Campo obrigatório'"
+										validate-on="dirty"
+										required>
+								</div>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<h2 class="register__events__form__title">2. Quando?</h2>
+						</div>
+						<div class="form-row">
+							<div class="col-12 col-sm-6 col-xl-3 pb-2">
+								<div class="form-group">
+									<label for="startDate">Data de início <span class="color--red">*</span></label>
+									<div class="input-group">
+										<span class="input-group-addon">
+											<i class="fa fa-xl fa-calendar color--blue"></i>
+										</span>
+										<input class="form-control" 
+											id="startDate" 
+											name="startDate"
+											placeholder="Início"
+											type = "text"
+											onfocus="(this.type='date')"
+											ng-model = "event.startDate"
+											required-message="'Campo obrigatório'"
+											validator = "startDateValidator() === true"
+											invalid-message = "startDateValidator()"
+											validate-on="dirty"
+											required/>
+									</div>
+								</div>
+
+							</div>
+							<div class="col-12 col-sm-6 col-xl-2 pb-2">
+								<div class="form-group">
+									<label for="hourInit">Hora de início <span class="color--red">*</span></label>
+									<div class="input-group">
+										<span class="input-group-addon">
+											<i class="far fa-xl fa-clock color--blue"></i>
+										</span>
+										<input type="time" id="hourInit" class="form-control" ng-model="event.startHour"/>
+									</div>
+								</div>
+							</div>
+							<div class="col-12 col-sm-6 col-xl-3 pb-2">
+								<div class="form-group">
+									<label for="endDate">Data de fim <span class="color--red">*</span></label>
+									<div class="input-group">
+										<span class="input-group-addon">
+											<i class="fa fa-xl fa-calendar color--blue"></i>
+										</span>
+										<input class="form-control" 
+											id="endDate"
+											name="endDate"
+											placeholder="Fim"
+											type = "text"
+											onfocus="(this.type='date')"
+											ng-model="event.endDate" 
+											required-message="'Campo obrigatório'"
+											validator = "endDateValidator() === true"
+											invalid-message = "endDateValidator()"
+											validate-on="dirty"
+											required/>
+									</div>
+								</div>
+							</div>
+							<div class="col-12 col-sm-6 col-xl-2 pb-2">
+								<div class="form-group">
+									<label for="endHour">Hora de fim <span class="color--red">*</span></label>
+									<div class="input-group">
+										<span class="input-group-addon">
+											<i class="far fa-xl fa-clock color--blue"></i>
+										</span>
+										<input type="time" id="endHour" class="form-control" ng-model="event.endHour"/>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<h2 class="register__events__form__title">3. Ingresso?</h2>
+						</div>
+						<div class="form-row">
+							<div class="col-12 col-sm-6 col-xl-4 pb-2">
+								<div class="form-group">
+									<label for="nameTicket">Nome do ingresso <span class="color--red">*</span></label>
+									<input type="text" 
+										id="nameTicket" 
+										class="form-control" 
+										name = "nameTicket"
+										class = "form-control"
+										ng-model = "event.nameTicket"
+										required-message="'Campo obrigatório'"
+										validate-on="dirty"
+										required>
+								</div>
+							</div>
+
+							<div class="col-12 col-sm-6 col-xl-3 pb-2">
+								<div class="form-group">
+									<label for="amountTicket">Quantidade de ingressos <span class="color--red">*</span></label>
+									<input type="text"
+										id="amountTicket"
+										class="form-control" 
+										name = "amountTicket"
+										class = "form-control"
+										ng-model = "event.amountTicket"
+										required-message="'Campo obrigatório'"
+										validator = "quantityValidator() === true"
+										invalid-message = "quantityValidator()"
+										validate-on="dirty"
+										ui-number-mask="0"
+										required>
+								</div>
+							</div>
+
+							<div class="col-12 col-sm-6 col-xl-3 pb-2">
+								<div class="form-group">
+									<label for="priceTicket">Preço do ingresso <span class="color--red">*</span></label>
+									<input type="text"
+										id="priceTicket"
+										class="form-control" 
+										name = "priceTicket"
+										class = "form-control"
+										ng-model = "event.priceTicket"
+										required-message="'Campo obrigatório'"
+										validate-on="dirty"
+										ui-money-mask="2"
+										required>
+								</div>
+							</div>
+
+							<div class="col-6 col-xl-1 pb-2 d-flex align-items-end">
+								<div class="form-group">
+									<label class="container-check">Grátis
+										<input type="checkbox" ng-model="event.free">
+										<span class="container-check__checkmark"></span>
+									</label>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group register__events__form__buttom">
+							<button type="submit" class="btn btn--orange">Publicar evento</button>
+						</div>
+						
+					</div>
+
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+</main>

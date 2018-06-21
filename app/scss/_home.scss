@@ -1,0 +1,54 @@
+.events__empty {
+	color: $gray-100;
+	margin-top: 50px;
+	&__title {
+		margin-top: 10px;
+		font-size: 14px;
+	}
+	@include media-breakpoint-up(md) {
+		margin-top: 100px;
+	}
+}
+
+.events__list {
+	background: $white;
+	text-align: left;
+	margin-top: 100px;
+	padding: 30px;
+	box-shadow: 0 0 15px rgba(152,152,152,.4);
+	.card__events {
+		border: 0;
+		&__title {
+			@extend .open-bold;
+			color: $gray-100;
+			font-size: 14px;
+			text-transform: uppercase;
+			padding-bottom: 25px;
+		}
+		&__table {
+			thead {
+				th {
+					@extend .open-bold;
+					font-size: 11px;
+					background: $gray-20;
+					color: $gray-200;
+					text-transform: uppercase;
+				}
+			}
+			tbody { 
+				tr {
+					td:nth-child(4) {
+						width: 250px;
+					}
+					td:nth-child(5) {
+						text-align: center;
+					}
+					td {
+						border-bottom: 1px solid #e9ecef;
+					}
+				}
+			}
+			
+		}
+	}
+}

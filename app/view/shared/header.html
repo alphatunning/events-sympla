@@ -1,0 +1,47 @@
+<header class="header">
+	<div class="nav">
+		<div class="nav__action">
+			<div class="nav__action--desktop">
+				<a class="btn btn--blue" href="?#!/register" ng-if="createEvent==true">
+					<i class="fas fa-plus mr-2"></i>Criar evento
+				</a>
+				<a class="btn btn--blue__outline" href="?#!/home" ng-if="myEvent==true">
+					Meus eventos
+				</a>
+			</div>
+			<div class="nav__action--mobile">
+				<a href="?#!/register" ng-if="createEvent==true">
+					<i class="fas fa-plus"></i>
+				</a>
+				<a href="?#!/home" ng-if="myEvent==true">
+					<i class="fas fa-list-ul"></i>
+				</a>
+			</div>
+		</div>
+		
+		<div class="nav__logo">
+			<img class="img-fluid" src="img/logo-sympla.png" alt="Logo">
+		</div>
+		<div class="nav__user">
+			<div class="nav__user--desktop">
+				<div class="nav__user--desktop__img" data-toggle="dropdown">
+					<img class="img-fluid" src="img/user.png" alt="">
+				</div>
+				<div class="nav__user--desktop__description" data-toggle="dropdown">
+					<p>Olá</p>
+					<p>Bruno Meireles<i class="fa fa-chevron-down ml-2" aria-hidden="true"></i></p>
+				</div>
+				<div class="nav__user--desktop__description dropdown-menu ">
+					<a class="dropdown-item" href="#!/login">Logout</a>
+				</div>
+			</div>
+			<div class="nav__user--mobile">
+				<a href="#!/login">
+					<i class="fas fa-sign-out-alt"></i>
+				</a>
+			</div>
+		</div>
+		
+		
+	</div>
+</header>

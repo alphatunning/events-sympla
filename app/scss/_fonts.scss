@@ -1,0 +1,33 @@
+$way-font-path: '../fonts' !default;
+
+@mixin fontFace($family,$url){
+  @font-face {
+    font-family: $family;
+    src: url('#{$url}');
+  }
+}
+
+@include fontFace('open-bold', '#{$way-font-path}/opensans/OpenSans-Regular.ttf');
+@include fontFace('open-semibold', '#{$way-font-path}/opensans/OpenSans-SemiBold.ttf');
+@include fontFace('open-regular', '#{$way-font-path}/opensans/OpenSans-Regular.ttf');
+@include fontFace('open-light', '#{$way-font-path}/opensans/OpenSans-Light.ttf');
+
+.open-bold {
+  font-family: 'open-bold' !important;
+  font-weight: 700;
+}
+
+.open-semibold {
+  font-family: 'open-semibold' !important;
+  font-weight: 700;
+}
+
+.open-regular {
+  font-family: 'open-regular' !important;
+  font-weight: 400;
+}
+
+.open-light {
+  font-family: 'open-light' !important;
+  font-weight: 400;
+}

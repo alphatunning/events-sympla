@@ -1,0 +1,1 @@
+angular.module("events", ["ngRoute","angularValidator","ui.utils.masks"]);

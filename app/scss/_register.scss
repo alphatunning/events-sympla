@@ -1,0 +1,22 @@
+.register__events {
+	margin-top: 20px;
+	padding: 30px;
+	background: $white;
+	box-shadow: 0 0 15px rgba(152, 152, 152, 0.3);
+
+	&__form {
+		position: relative;
+		text-align: left;
+		margin: 0;
+		&__title {
+			color: $blue;
+			font-size: 30px;
+			margin-bottom: 15px;
+		}
+		&__buttom {
+			position: absolute;
+			right: 0;
+			transform: translateY(60px);
+		}
+	}
+}
