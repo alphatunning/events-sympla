@@ -37,7 +37,7 @@ Set the baseDir to dist
 gulp.task('server', function() {
 	browserSync.init({
 		server: {
-			baseDir: 'app'  --> dist
+			baseDir: 'app'  --> set to "dist"
 		}
 		});
 	});
